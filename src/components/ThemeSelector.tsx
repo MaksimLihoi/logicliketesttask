@@ -1,12 +1,14 @@
 import React, { memo } from 'react';
 import {
   FlatList,
+  Image,
   Modal,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { iconRegistry, icons } from '../assets';
 
 interface ThemeSelectorProps {
   visible: boolean;
@@ -57,7 +59,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = memo(
             style={styles.closeButtonContainer}
             onPress={onClose}
           >
-            <Text style={styles.closeButton}>✕</Text>
+            <Image source={iconRegistry[icons.cross]} width={22} />
           </TouchableOpacity>
 
           <FlatList
@@ -112,10 +114,6 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-  },
-  closeButton: {
-    fontSize: 22,
-    color: 'rgba(0, 0, 0, 1)',
   },
   listContent: {
     paddingBottom: 20,

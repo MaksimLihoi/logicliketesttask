@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { iconRegistry, icons } from '../assets';
 
 interface ThemeHeaderProps {
   theme: string | null;
@@ -16,7 +17,7 @@ const ThemeHeader: React.FC<ThemeHeaderProps> = memo(({ theme, onPress }) => {
       <View style={styles.container}>
         <Text style={styles.title}>{theme || 'Все темы'}</Text>
         <View style={styles.arrowContainer}>
-          <Text style={styles.arrow}>▼</Text>
+          <Image source={iconRegistry[icons.pointer]} style={styles.icon} />
         </View>
       </View>
     </TouchableOpacity>
@@ -48,10 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  arrow: {
-    fontSize: 12,
-    color: '#fff',
-  },
+  icon: { width: 10, resizeMode: 'center' },
 });
 
 export default ThemeHeader;
