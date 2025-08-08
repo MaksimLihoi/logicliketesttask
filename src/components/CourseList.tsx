@@ -14,9 +14,11 @@ interface CourseListProps {
 }
 
 const CourseList: React.FC<CourseListProps> = memo(({ courses }) => {
-  const renderItem = ({ item }: { item: Course }) => (
-    <CourseItem name={item.name} image={item.image} bgColor={item.bgColor} />
-  );
+  const renderItem = ({ item }: { item: Course }) => {
+    return (
+      <CourseItem name={item.name} image={item.image} bgColor={item.bgColor} />
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -35,10 +37,12 @@ const CourseList: React.FC<CourseListProps> = memo(({ courses }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
+    width: '100%',
   },
   listContent: {
-    paddingRight: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingRight: 20,
   },
 });
 

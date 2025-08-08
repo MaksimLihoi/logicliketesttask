@@ -22,10 +22,8 @@ const App = () => {
   const [showThemeSelector, setShowThemeSelector] = useState(false);
 
   useEffect(() => {
-    console.log('use effect');
     const fetchCourses = async () => {
       try {
-        console.log('Fetching courses...');
         const response = await axios.get(
           'https://logiclike.com/docs/courses.json',
         );

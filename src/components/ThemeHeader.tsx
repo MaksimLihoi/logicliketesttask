@@ -8,7 +8,11 @@ interface ThemeHeaderProps {
 
 const ThemeHeader: React.FC<ThemeHeaderProps> = memo(({ theme, onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.7}
+      style={styles.button}
+    >
       <View style={styles.container}>
         <Text style={styles.title}>{theme || 'Все темы'}</Text>
         <View style={styles.arrowContainer}>
@@ -20,6 +24,7 @@ const ThemeHeader: React.FC<ThemeHeaderProps> = memo(({ theme, onPress }) => {
 });
 
 const styles = StyleSheet.create({
+  button: { position: 'absolute', top: 12, zIndex: 2 },
   container: {
     flexDirection: 'row',
     alignItems: 'center',

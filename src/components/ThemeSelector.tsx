@@ -53,7 +53,10 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = memo(
           <View style={styles.header}>
             <Text style={styles.headerTitle}>Выбор темы</Text>
           </View>
-          <TouchableOpacity onPress={onClose}>
+          <TouchableOpacity
+            style={styles.closeButtonContainer}
+            onPress={onClose}
+          >
             <Text style={styles.closeButton}>✕</Text>
           </TouchableOpacity>
 
@@ -62,6 +65,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = memo(
             renderItem={renderItem}
             keyExtractor={item => item}
             contentContainerStyle={styles.listContent}
+            showsVerticalScrollIndicator={false}
             ListHeaderComponent={
               <TouchableOpacity
                 onPress={() => onSelect(null)}
@@ -76,7 +80,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = memo(
                   <Text
                     style={[
                       styles.themeText,
-                      selectedTheme && styles.selectedText,
+                      !selectedTheme && styles.selectedText,
                     ]}
                   >
                     Все темы
@@ -138,6 +142,7 @@ const styles = StyleSheet.create({
   selectedText: {
     color: '#fff',
   },
+  closeButtonContainer: { position: 'absolute', top: 24, right: 54 },
 });
 
 export default ThemeSelector;
