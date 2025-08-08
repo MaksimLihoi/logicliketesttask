@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { FontFamily } from '../assets/fonts/fonts.ts';
 
 interface CourseItemProps {
   name: string;
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#5A5776',
+    fontFamily: FontFamily.nunitoExtraBold,
   },
   footerContainer: {
     backgroundColor: '#fff',

@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { iconRegistry, icons } from '../assets';
+import { FontFamily } from '../assets/fonts/fonts.ts';
 
 interface ThemeSelectorProps {
   visible: boolean;
@@ -114,6 +115,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: FontFamily.nunitoExtraBold,
   },
   listContent: {
     paddingBottom: 20,
@@ -136,6 +138,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#39414B',
+    fontFamily: FontFamily.nunitoExtraBold,
   },
   selectedText: {
     color: '#fff',

@@ -1,4 +1,3 @@
 export const FontFamily = {
   nunitoBold: 'Nunito-Bold',
-  nunitoExtraBold: 'Nunito-ExtraBold',
 } as const;

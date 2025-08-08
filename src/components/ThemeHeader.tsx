@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { iconRegistry, icons } from '../assets';
+import { FontFamily } from '../assets/fonts/fonts.ts';
 
 interface ThemeHeaderProps {
   theme: string | null;
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     marginRight: 3,
+    fontFamily: FontFamily.nunitoExtraBold,
   },
   arrowContainer: {
     width: 18,
